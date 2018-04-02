@@ -1,0 +1,76 @@
+body {
+	background: rgb(80, 80, 80);
+}
+
+header, nav, section, aside {
+	background: rgb(144, 144, 144);
+	border-radius: 10px;
+	box-shadow: 9px 9px 10px;
+}
+
+.forall {
+	width: 1570px;
+	margin: 0 auto;
+	height: 500px;
+}
+
+header {
+	margin-top: 15px;
+	margin-left: 45px;
+	width: 1480px;
+	height: 130px;
+}
+
+nav, aside {
+	height: 450px;
+	width: 142px;
+	position: relative;
+}
+
+nav {
+	top: 20px;
+	left: 90px;
+}
+
+aside {
+	bottom: 1027px;
+	left: 1352px;
+}
+
+nav img, aside img {
+	width: 80px;
+	position: relative;
+	left: 30px;
+	top: 10px;
+}
+
+section {
+	height: 597px;
+	width: 1045px;
+	position: relative;
+	bottom: 430px;
+	left: 268px;
+}
+
+.brg {
+	background-image: url("./resources/brick.jpg");
+	background-repeat: repeat;
+	position: relative;
+	left: 12px;
+	top: 12px;
+	width: 120px;
+	height: 75px;
+}
+
+.lst {
+	background: rgb(130, 250, 120);
+	border-radius: 10px;
+	box-shadow: 9px 9px 10px;
+	position: relative;
+	bottom: 958px;
+	width: 568px;
+	height: 200px;
+	font-family: Verdana;
+	font-size: 109%;
+	font-weight: 3000;
+}
