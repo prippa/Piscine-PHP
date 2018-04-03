@@ -8,7 +8,9 @@
 
 	$arr = array();
 
-	for ($i = 1; $i < count($argv); $i++) {
+	array_shift($argv);
+	for ($i = 0; $i < count($argv); $i++)
+	{
 		$tmp = ft_split($argv[$i]);
 		for ($j = 0; $j < count($tmp); $j++)
 			array_push($arr, $tmp[$j]);
