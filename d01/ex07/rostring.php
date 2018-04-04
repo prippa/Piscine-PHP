@@ -8,6 +8,7 @@
 
 	if ($argc == 1)
 		exit();
+	
 	$arr = ft_split($argv[1]);
 	for ($i = 1; $i < count($arr); $i++)
 		echo "$arr[$i] ";
