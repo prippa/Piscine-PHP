@@ -15,7 +15,7 @@
 			}
 		}
 	}
-	$data[] = array("login" => $_POST["login"], "passwd" => hash("md5", $_POST["passwd"]));
+	$data[] = array("login" => $_POST["login"], "passwd" => hash("sha256", $_POST["passwd"]));
 	file_put_contents("../private/passwd", serialize($data));
 	echo "OK\n";
 ?>
