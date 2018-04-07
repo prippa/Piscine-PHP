@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" charset="utf-8"/>
+    <title>Admin Page</title>
+</head>
+<body>
+    <div id="header">
+        <a href="index.php" id="logo"></a>      
+        <div id="call">Online Shop</div>         
+    </div>
+    <div class="op">
+        <form action="delusr.php" method="POST">
+            <input placeholder="Username" type="text" name="login" value="" />
+            <br />
+            <input type="submit" name="submit" value="OK"/>
+        </form>
+        <h2>ADD_PRODUCT</h2>
+         <form action="pr_add.php" method="GET">
+            <input placeholder="id" type="text" name="id" value="" />
+            <br />
+            <input placeholder="name" type="text" name="name" value="" />
+            <br />
+            <input placeholder="cat" type="text" name="cat" value="" />
+            <br />
+            <input placeholder="price" type="text" name="price" value="" />
+            <br />
+            <input placeholder="url" type="text" name="url" value="" />
+            <br />
+            <input type="submit" name="submit" value="OK"/>
+        </form>
+        <h2>MOD_PRODUCT</h2>
+        <h2>id_mandatory</h2>
+        <form action="pr_mod.php" method="GET">
+            <input placeholder="id" type="text" name="id" value="" />
+            <br />
+            <input placeholder="newID" type="text" name="newid" value="" />
+            <br />
+            <input placeholder="name" type="text" name="name" value="" />
+            <br />
+            <input placeholder="cat" type="text" name="cat" value="" />
+            <br />
+            <input placeholder="price" type="text" name="price" value="" />
+            <br />
+            <input placeholder="url" type="text" name="url" value="" />
+            <br />
+            <input type="submit" name="submit" value="OK"/>
+        </form>
+        <h2>MOD_PRODUCT</h2>
+        <h2>id_mandatory</h2>
+        <form action="pr_del.php" method="GET">
+            <input placeholder="id" type="text" name="id" value="" />
+            <br />
+            <input type="submit" name="submit" value="OK"/>
+        </form>
+        <h2>BASKET_ADD</h2>
+        <form action="basket_add.php" method="GET">
+            <input placeholder="id" type="text" name="id" value="" />
+            <br />
+            <input type="submit" name="submit" value="OK"/>
+        </form>
+        <a href="my_page.html">Back to start!</a>
+        <a href="status.html">status!</a>
+    </div>
+</body>
+</html>
