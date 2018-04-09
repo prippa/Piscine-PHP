@@ -15,5 +15,5 @@ if ($_GET['id']) {
 			$_SESSION['basket'][] = $tmp;
 		}
 }
-header("Location: index.php?message=add");
+header("Location: basket.php");
 ?>

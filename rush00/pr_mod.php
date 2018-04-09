@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if ($_GET['id'] && $_GET['submit'] && $_GET['submit'] === "OK") {
+	if ($_GET['id'] && $_GET['name'] && $_GET['cat'] && $_GET['price'] && $_GET['url'] && $_GET['submit'] && $_GET['submit'] === "OK") {
 		if ($_SESSION['is_adm'] == "true") {
 			if (!file_exists('private')) {
             	mkdir("private");
@@ -12,18 +12,16 @@
         	$acc = unserialize(file_get_contents($path));
         	if ($acc) {
             	foreach ($acc as $key => $value) {
-                	if ($value['id'] === $_GET['id']) {
-                		if (isset($_GET['name']) === true)
-        					$acc[$key]['name'] = $_GET['name'];
-        				if (isset($_GET['cat']) === true)
-        					$acc[$key]['cat'] = $_GET['cat'];
-        				if (isset($_GET['price']) === true)
-        					$acc[$key]['price'] = $_GET['price'];
-        				if (isset($_GET['url']) === true)
-        					$acc[$key]['url'] = $_GET['url'];
-            			print_r($acc);
+                	if ($value['id'] == $_GET['id']) {
+                            $tmp['id'] = $_GET['id'];
+        					$tmp['name'] = $_GET['name'];
+        					$tmp['cat'] = $_GET['cat'];
+        					$tmp['price'] = $_GET['price'];
+        					$tmp['url'] = $_GET['url'];
+                            unset($acc[$key]);
+                            $acc[] = $tmp;
             			file_put_contents($path, serialize($acc));
-            			echo "OK\n";
+                        header("Location: my_page.php?message=ok");
             			break ;
                 	}
             	}
@@ -31,6 +29,7 @@
 
         } else
 			echo "no rights(\n";
-	} else
-		echo "Fill all filds(\n";
+            header("Location: my_page.php?message=no-righst");
+    } else
+    header("Location: my_page.php?message=fill");
 ?>

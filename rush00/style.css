@@ -1,3 +1,15 @@
+.pmp {
+	width: 50px;
+	font-size: 20px;
+	float: right;
+}
+
+.pmm {
+	width: 50px;
+	font-size: 20px;
+	float: left;
+}
+
 .op {
 	padding: 20px;
 	width: 240px;
@@ -6,7 +18,7 @@
 	height: 300px;
 }
 
-input {
+.op input {
 	margin: 5px;
 	width: 240px;
 	text-align: center;
@@ -19,7 +31,7 @@ input {
 	transition: border .5s;
 }
 
-input[type=submit] {
+.op input[type=submit] {
 	border: 2px solid transparent;
 	background: #3498db;
 	color: white;
@@ -29,7 +41,7 @@ input[type=submit] {
 	border-radius: 3px;
 }
 
-input[type=submit]:hover {
+.op input[type=submit]:hover {
 	background: #2980b9;
 }
 
@@ -142,6 +154,13 @@ body {
 	padding-left: 60px;
 }
 
+#rightblock-basket {
+	width: 1600px;
+	height: 400px;
+	margin: 0 auto;
+	padding-left: 60px;
+}
+
 .product {
 	width: 200px;
 	height: 320px;
@@ -196,6 +215,7 @@ body {
 	-webkit-box-sizing: border-box;
 }
 
-.to-cart:hover {
-	color: #f6ff00;
+.user-text {
+    color: #3a68a5;
+    margin: 5px 6px;
 }

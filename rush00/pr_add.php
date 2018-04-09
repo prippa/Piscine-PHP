@@ -18,7 +18,7 @@
             	}
         	}
         	if ($exist == 1) {
-        		echo "ERROR\n";
+                header("Location: my_page.php?message=error");
         	} else {
         		$tmp['id'] = $_GET['id'];
         		$tmp['name'] = $_GET['name'];
@@ -28,12 +28,12 @@
         		$acc[] = $tmp;
             	print_r($acc);
             	file_put_contents($path, serialize($acc));
-            	echo "OK\n";
+                header("Location: my_page.php?message=ok");
         	}
 		} else {
-			echo "no rights(\n";
+            header("Location: my_page.php?message=no-righst");
 		}
 	} else {
-		echo "Fill all filds(\n";
+        header("Location: my_page.php?message=fill");
 	}
 ?>

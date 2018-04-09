@@ -20,5 +20,13 @@
             <input type="submit" name="submit" value="OK"/>
         <div/>
 	</form>
+    <?php
+        if ($_GET['message'] == 'error') {
+            echo '<script> window.alert("ERROR"); </script>';
+        }
+        else if ($_GET['message'] == 'ok') {
+            header("Location: index.php");
+        }
+    ?>
 </body>
 </html>

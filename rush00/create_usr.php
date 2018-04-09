@@ -16,17 +16,18 @@
             }
         }
         if ($exist) {
-            echo "ERROR\n";
+            header("Location: create.php?message=error");
         } else {
             $tmp['login'] = $_POST['login'];
             $tmp['is_adm'] = "false";
+            $tmp['money'] = 0;
             $tmp['passwd'] = hash('whirlpool', $_POST['passwd']);
             $acc[] = $tmp;
             print_r($acc);
             file_put_contents($path, serialize($acc));
-            echo "OK\n";
+            header("Location: create.php?message=ok");
         }
     } else {
-        echo "ERROR\n";
+        header("Location: create.php?message=error");
     }
 ?>

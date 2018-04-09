@@ -6,26 +6,14 @@
         $_SESSION['loggued_user'] = $_POST['login'];
          if (is_admin($_POST['login'])){
          	$_SESSION['is_adm'] = "true";
-         	echo "true\n";
          	echo $_SESSION['is_adm'];
          }
          else
          	$_SESSION['is_adm'] = "false";
-        echo "OK\n";
+         header("Location: login.php?message=ok");
     } else {
         $_SESSION['loggued_user'] = "";
         $_SESSION['is_adm'] = "";
-        echo "ERROR\n";
+        header("Location: login.php?message=error");
     }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>42chat</title>
-</head>
-<body>
-	<a href="my_page.html">Back to start!</a>
-</body>
-</html>

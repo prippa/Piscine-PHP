@@ -9,22 +9,26 @@
             if (!file_exists($path)) {
                 file_put_contents($path, null);
             }
+            if ($_POST['login'] == 'root_1'){
+                header("Location: my_page.php?message=no-righst");
+                exit();
+            }
             $acc = unserialize(file_get_contents($path));
             if ($acc) {
                 foreach ($acc as $key => $value) {
-                    if ($value['login'] === $_POST['login'] && $_POST['login'] != $_SESSION['loggued_user']) {
+                    if ($value['login'] === $_POST['login'] && $_POST['login'] != $_SESSION['loggued_user'] && $_POST['login'] != 'root_1') {
                             unset($acc[$key]);
                             print_r($acc);
                             file_put_contents($path, serialize($acc));
-                            echo "OK\n";
+                            header("Location: my_page.php?message=ok");
                             break;
                         }
                     }
                 } else {
-                    echo "ERROfffR\n";
+                header("Location: my_page.php?message=error");
             }
         } else
-            echo "no rights\n";
+        header("Location: my_page.php?message=no-righst");
     } else
-        echo "ERkkkkkROR\n";
+    header("Location: my_page.php?message=error");
 ?>

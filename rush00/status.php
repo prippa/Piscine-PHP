@@ -19,5 +19,19 @@
 	        <input type="submit" name="submit" value="OK"/>
 	    </form>
 	</div>
+	<?php
+		if ($_GET['message'] == 'error') {
+			echo '<script> window.alert("ERROR"); </script>';
+		}
+		else if ($_GET['message'] == 'ok') {
+			echo '<script> window.alert("OK"); </script>';
+		}
+		else if ($_GET['message'] == 'no-rights') {
+			echo '<script> window.alert("NO RIGHTS"); </script>';
+		}
+		else if ($_GET['message'] == 'fill') {
+			echo '<script> window.alert("FILL ALL FILDS"); </script>';
+		}
+    ?>
 </body>
 </html>
