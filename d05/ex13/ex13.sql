@@ -1,1 +1,2 @@
-SELECT round(avg(nbr_siege)) AS moyenne FROM `salle`;
+SELECT round(avg(nb_seats)) AS average
+FROM cinema;

@@ -1,1 +1,2 @@
-SELECT count(id_abo) AS nb_abo, FLOOR(AVG(prix)) AS moy_abo, MOD(SUM(duree_abo), 42) AS ft FROM abonnement;
+SELECT count(id_sub) AS nb_susc, FLOOR(AVG(price)) AS av_susc, MOD(SUM(duration_sub), 42) AS ft
+FROM subscription;
