@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8"> 
+	<title>Balloon</title>
+	<style>
+		.balloon {
+			background: red;
+			margin: auto;
+			margin-top: 35vh;
+			height: 200px;
+			width: 200px;
+			border-radius: 100%;
+		}
+	</style>
+	<script>
+		var size = 200;
+		var color = 'red';
+		function getColor(color_var) {
+			if (color_var == 'red')
+				return 'green';
+			else if (color_var == 'green')
+				return 'blue';
+			else if (color_var == 'blue')
+				return 'red';
+		}
+		function grow(obj) {
+			color = getColor(color);
+			size += 10;
+			if (size > 420)
+				size = 200;
+			obj.style.width = size;
+			obj.style.height = size;
+			obj.style.background = color;
+		}
+		function decrease(obj) {
+			color = getColor(color);
+			if (size > 200)
+				size -= 5;
+			obj.style.width = size;
+			obj.style.height = size;
+			obj.style.background = color;
+		}
+	</script>
+</head>
+<body>
+	<div onmouseout="decrease(this);" onclick="grow(this);" class="balloon">
+		
+	</div>
+</body>
+</html>
