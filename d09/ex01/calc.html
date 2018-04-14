@@ -11,41 +11,43 @@
 	</style>
 </head>
 <body>
-	<form name="calc-form" onsubmit="do_op();" >
+	<form name="calc-form" onsubmit="do_op();">
 		<div class="calc">
 			<input type="text" id="left"/>
 			<select name="select" id="op">
-		  		<option value="+" selected>+</option> 
-		  		<option value="-">-</option>
-		  		<option value="*">*</option>
-		   		<option value="/">/</option>
-		  		<option value="%">%</option>
+				<option value="+" selected>+</option> 
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+				<option value="%">%</option>
 			</select>
 			<input type="text" id="right">
 			<input type="submit" name="submit" value="Try me!">
 		</div>
 	</form>
 	<script type="text/javascript">
-		setInterval(function() {alert("Please, use me...")}, 30000);
+		setInterval(function() {alert('Please, use me...')}, 30000);
 		
 		function print(message) {
-            console.log(message);
-            alert(message);
-        }
+			console.log(message);
+			alert(message);
+		}
 
-        function do_op() {
-        	var form = document.forms['calc-form'];
-			var num_1 = parseInt(form['left'].value);
-			var num_2 = parseInt(form['right'].value);
+		function do_op() {
+			var form = document.forms['calc-form'];
+			var num_1 = Number(form['left'].value);
+			var num_2 = Number(form['right'].value);
 			var op = form['select'].value;
 			
-			if (num_1 < 0 || num_2 < 0 || isNaN(num_1) || isNaN(num_2)
-				|| (op != '+' && op != '-' && op != '*' && op != '/' && op != '%')) {
-				print("Error :(");
+			if (num_1 < 0 || num_2 < 0
+				|| isNaN(num_1) || isNaN(num_2)
+				|| form['left'].value.trim() == '' || form['right'].value.trim() == ''
+				|| num_1 != parseInt(num_1) || num_2 != parseInt(num_2)) {
+				print('Error :(');
 				return false;
 			}
 			if (num_2 == 0 && (op == '/' || op == '%')) {
-				print("It’s over 9000!");
+				print('It’s over 9000!');
 				return false;
 			}
 			if (op == '+')
@@ -58,8 +60,8 @@
 				print(num_1 / num_2);
 			else if (op == '%')
 				print(num_1 % num_2);
-			return true;			
-        }
+			return true;
+		}
 	</script>
 </body>
 </html>
