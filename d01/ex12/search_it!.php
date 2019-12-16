@@ -1,18 +1,18 @@
 <?php
 
-if ($argc < 2) {
+if ($argc < 3) {
     exit();
 }
 
+array_shift($argv);
+$search_key = array_shift($argv);
 $result = null;
-$i = 2;
 
-while (isset($argv[$i])) {
-    $key = strchr($argv[$i], ':', true);
-    if ($key === $argv[1]) {
-        $result = substr(strchr($argv[$i], ':'), 1);
+foreach ($argv as $item) {
+    $key = strchr($item, ':', true);
+    if ($key === $search_key) {
+        $result = substr(strchr($item, ':'), 1);
     }
-    ++$i;
 }
 
 if ($result) {
